@@ -1,0 +1,576 @@
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #010824;
+  color: #eee;
+  font-size: 15px;
+  min-height: 100vh;
+ 
+
+}
+
+body::before {
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  content: '';
+  background-image: linear-gradient(to right, #d02e23, #7a43b6);
+
+  z-index: -1;
+  top: -200px;
+  left: calc(50% - 200px);
+  border-radius: 50% 50% 0 0;
+  pointer-events: none;
+  filter: blur(250px);
+}
+
+main {
+  width: min(1300px, 100%);
+  margin: auto;
+}
+
+header {
+  position: fixed;
+
+  width: min(1300px, 100%);
+  height: 60px;
+  top: 0;
+  left: 50%;
+
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  backdrop-filter: blur(10px);
+  z-index: 100;
+
+}
+
+header img {
+  width: 250px;
+  margin-top: 30px;
+}
+
+header .logo, header nav {
+  display: flex;
+  gap: 30px;
+  padding-top: 15px;
+}
+
+
+
+header .logo span, header nav span {
+  cursor: pointer;
+  display:none;
+}
+
+header nav span.active {
+  color: #e945e3 ;
+
+  text-shadow: 0 0 5px #7a43b6;
+}
+
+section {
+  width: min(1300px, 100%);
+  margin: auto;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+section.home {
+  padding-top: 150px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+section.home .content {
+  font-family: 'MuseoModerno', system-ui;
+}
+
+section.home .content .name {
+  font-size: 7em;
+  font-weight: bold;
+  line-height: 1em;
+}
+section.home .content .name span {
+  background-image: linear-gradient(to right, #17085c,  #F3265F, #7F40AC, #17085c);
+  background-size: 200% auto;
+  animation: gradientAnimation 5s linear infinite;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+section.home .content .des {
+  color: #eee5;
+  margin: 30px 0;
+  border-left: 0.7em solid #e945e457;
+  padding-left: 2em;
+}
+
+section.home a {
+  color: #eee;
+  font-size: large;
+  font-weight: bold;
+  text-decoration: none;
+  border: 1px solid #eee;
+  padding: 20px 30px;
+  border-radius: 40px;
+  margin-top: 30px;
+  display: block;
+  width: max-content;
+  transition: 0.5s;
+}
+section.home a:hover{
+background-color: #17085c6a;
+
+}
+
+
+section .avatar {
+  text-align: right;
+
+}
+
+section .avatar .card {
+  display: inline-flex;
+  flex-direction: column;
+  box-shadow: 0 150px 150px #5e035b41;
+  transition: 0.5s;
+margin-bottom: 150px;
+  border-radius: 50px;
+}
+
+section .avatar .card:hover {
+  box-shadow: 0 150px 150px #e945e355;
+}
+
+
+/*
+section .avatar .card .info {
+  background-color: #eee;
+  color: #010824;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: center;
+  gap: 20px;
+  padding: 20px;
+  font-size: 1.2em;
+}
+  */
+
+section .avatar .card .info div:nth-child(-n+3) {
+  font-weight: bold;
+}
+
+/* this skills*/
+
+.skills .title {
+  text-align: center;
+  font-size: 3em;
+  font-family: 'MuseoModerno', system-ui;
+}
+
+.skills  .des{
+  color: #eee5;
+  text-align: center;
+  max-width: 500px;
+  margin: auto ;
+}
+.skills  .list{
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 150px);
+  justify-content: space-between;
+  font-family:  system-ui;
+  position: relative;
+  text-align: center;
+  gap: 3vw;
+
+}
+
+
+/**/
+
+.skills  .list .item:hover{
+ 
+  cursor:pointer;
+
+
+}
+
+
+.skills  .list   svg{
+  font-size: 30px;
+  background-color: #eee2;
+    padding: 10px;
+    border-radius: 10px;
+}
+.skills  .list   .des{
+  text-align: left;
+    width: 100%;
+    font-size: small;
+}
+
+
+/* this project*/
+
+.projects .title{
+  font-size: 5vw;
+      text-align: center;
+      font-family: 'MuseoModerno';
+      margin-top: 100px;
+}
+ .projects  .des{
+  color: #eee5;
+  text-align: center;
+  max-width: 500px;
+  margin: auto;
+}
+  .projects .list{
+  margin-top:50px;
+}
+.projects .item{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 20px;
+
+}
+
+.projects .images{
+  background-image: linear-gradient(
+    -45deg, #473bb4, #be24a963,#000
+  );
+  padding: 25px;
+  text-align: center;
+  border-radius: 20px;
+  overflow: hidden;
+
+}
+.projects img{
+  height: 400px;
+width: 500px;
+  border-radius:10px;
+  box-shadow: 0 20px 40px #010824;
+}
+.projects  h3{
+  font-size: 3em;
+  margin: 0;
+}
+.projects .des{
+  text-align: left;
+  width: 100%;
+}
+.projects .mission{
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.projects div:nth-child(1) svg{
+  background-color: #eee3;
+  padding:20px ;
+  font-size: 20px;
+  border-radius: 15px;
+}
+
+.projects  :nth-child(2n)  .images{
+  grid-column-start: 2;
+  grid-row-start:1 ;
+  
+}
+.projects .images .content{
+  grid-column-start:1;
+  grid-row-start: 1;
+}
+.contacts {
+  padding-bottom: 220px;
+
+}
+
+.link {
+  background-color:#17085c;
+ text-align: center;
+  padding: 10px 20px;
+  margin-left: 300px; 
+  border-radius: 10px;
+  width: 280px;
+}
+.link a{
+  color: #fff;
+  text-decoration: none;
+  font-family: 'MuseoModerno', sans-serif;
+}
+.link:hover{
+  background-color: #010824;
+}
+  
+.contacts .title{
+  font-size: 5vw;
+  text-align: center;
+  font-family: 'MuseoModerno';
+}
+.contacts .des{
+  color: #eee5;
+  text-align: center;
+  max-width: 500px;
+  margin: auto;
+}
+.contacts .list{
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 550px);
+
+}
+.contacts .item{
+margin-top: 50px;
+}
+
+.animation{
+  transform: translateY(50px);
+  filter: blur(20px);
+  opacity: 0;
+  transition: 0.5s;
+}
+ .active{
+  transform: translateY(0);
+  filter: blur(0);
+  opacity: 1;
+}
+.icon-bar{
+  display: none;
+
+  cursor: pointer;
+}
+
+
+.footer{
+  color: #eeeeee58;
+  position: relative;
+   top:200px;
+   text-align: center;
+}
+.contacts   .item svg{
+  backdrop-filter: blur(50px);
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #2e036546;
+  font-size: 20px;
+  transition: 0.5s;
+  color: #eee;
+
+}
+.contacts   .item svg:hover{
+  background-color: #17085c;
+
+}
+
+
+
+  
+@media  screen and (max-width:767px) {
+  section{
+    padding: 20px;
+  }
+  section.home{
+    grid-template-columns: 1fr;
+    padding-top: 70px;
+  }
+  section.home .content .name{
+font-size: 3em;
+  }
+section a{
+    margin: auto;
+    font-size: small;
+  }
+  section .avatar{
+    grid-row-start:1 ;
+  }
+  .skills .list{
+grid-template-columns: 1fr;
+  }
+  .projects .list .item{
+    grid-template-columns: 1fr;
+  }
+  .projects .content h3{
+    font-size: 1.2em;
+
+  }
+  .projects:nth-child(2n){
+    .content, .images{
+      grid-column-start: auto;
+      grid-column-end:  auto;
+      grid-row-start: auto;
+  } 
+
+  .link {
+    margin: 20px 50px; 
+  }
+  }
+
+  header .icon-bar{
+    display: block;
+  
+  }
+  .projects img{
+    width: 400px;
+    height: 350px;
+  }
+  .skills  .list{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100px);
+    justify-content: space-between;
+    font-family:  system-ui;
+    position: relative;
+    text-align: center;
+    gap: 3vw;
+  
+  }
+  .contacts .list{
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 210px);
+  
+  }
+  section .avatar .card{
+    margin-bottom: 0;
+  }
+}
+
+
+/*
+@media  screen and (max-width:1024px){
+  section{
+    padding: 20px;
+  }
+  section.home{
+    grid-template-columns: 1fr;
+    padding-top: 70px;
+  }
+  section.home .content .name{
+font-size: 3em;
+  }
+section a{
+    margin: auto;
+    font-size: small;
+  }
+  section .avatar{
+    grid-row-start:1 ;
+    width: 570px;
+    
+  }
+  .skills .list{
+grid-template-columns: 1fr;
+  }
+  .projects .list .item{
+    grid-template-columns: 1fr;
+  }
+  .projects .content h3{
+    font-size: 1.2em;
+
+  }
+  .projects:nth-child(2n){
+    .content, .images{
+      grid-column-start: auto;
+      grid-column-end:  auto;
+      grid-row-start: auto;
+      width: 600px;
+      margin-left:  70px;
+  } 
+  }
+
+  header .icon-bar{
+    display: block;
+  
+  }
+  .projects img{
+    width: 600px;
+    height: 350px;
+  }
+  .skills  .list{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100px);
+    justify-content: space-between;
+    font-family:  system-ui;
+    position: relative;
+    text-align: center;
+    gap: 3vw;
+  
+  }
+  .contacts .list{
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 360px);
+  
+  }
+}
+  */
+
+
+nav{
+  position: fixed;
+
+  width: 80%;
+  height: 100vh;
+  inset: 0 auto 0 0;
+  background-color:#010824;
+
+  color: #eee;
+  font-family: 'MuseoModerno';
+  padding: 50px;
+  flex-direction: column;
+
+  box-sizing: border-box;
+  left: -100%;
+  transition: 0.5s;
+  &.active{
+    left: 0;
+  }
+
+}
+  
+section .avatar .card img {
+  width: 100%;
+border-radius: 300px;
+  object-fit: cover;
+  object-position: top;
+  clip-path: polygon(81% 0, 100% 18%, 100% 100%, 0 100%, 0 0);
+  animation-name: main-photo;
+  animation-iteration-count: infinite;
+  animation:main-photo 1s infinite alternate;
+
+
+
+}
+
+
+@keyframes main-photo {
+  0%{
+      transform: translateY(0px);
+  }
+  100%{
+      transform: translateY(-10px);
+  }
+}
+
+
+
+
+@keyframes gradientAnimation {
+  to {
+    background-position: 200% center;
+  }
+}
